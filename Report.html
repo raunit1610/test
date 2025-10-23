@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1st Semester Evaluation Report</title>
+  <link rel="stylesheet" href="Report.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="report-container" id="report">
+    <h1 align="center">MARIA'S DAY SCHOOL</h1>
+    <h1 align="center">HOWRAH</h1>
+    <h2 align="center">AFFILIATED TO CISCE, NEW DELHI</h2>
+    <p align="center"><strong>SCHOOL CODE :</strong> WB130</p>
+    <p align="center">11/6, G.T. ROAD (S) & 2, GOPAL GOBINDA BOSE LANE, HOWRAH – 711101. WEST BENGAL</p>
+
+    <h3 align="center"><span id="semester"></span> SEMESTER EVALUATION REPORT</h3>
+
+    <div class="student-info">
+      <p><strong>Student's Name :</strong> <span id="stn"></span> &nbsp;&nbsp; <strong>Class :</strong> <span id="stclass"></span></p>
+      <p><strong>Student's ID :</strong> <span id="stid"></span> &nbsp;&nbsp; <strong>Section :</strong> <span id="stsec"></span></p>
+      <p><strong>Father's Name :</strong> <span id="fn"></span> &nbsp;&nbsp; <strong>Roll No. :</strong> <span id="rn"></span></p>
+      <p><strong>Mother's Name :</strong> <span id="mname"></span> &nbsp;&nbsp; <strong>Year/Session :</strong> <span id="year"></span></p>
+    </div>
+
+    
+    <table>
+      <h4>SUBJECTS GRADE</h4>
+      <tr><th>SUBJECTS</th><th>GRADE</th></tr>
+      <tr><td><span id="sub1"></span></td><td><span id="gd1"></span></td></tr>
+      <tr><td><span id="sub2"></span></td><td><span id="gd2"></span></td></tr>
+      <tr><td><span id="sub3"></span></td><td><span id="gd3"></span></td></tr>
+      <tr><td><span id="sub4"></span></td><td><span id="gd4"></span></td></tr>
+      <tr><td><span id="sub5"></span></td><td><span id="gd5"></span></td></tr>
+      <tr><td><span id="sub6"></span></td><td><span id="gd6"></span></td></tr>
+      <tr><td><span id="sub7"></span></td><td><span id="gd7"></span></td></tr>
+      <tr><td><span id="sub8"></span></td><td><span id="gd8"></span></td></tr>
+      <tr><td><span id="sub9"></span></td><td><span id="gd9"></span></td></tr>
+      <tr><td><span id="sub10"></span></td><td><span id="gd10"></span></td></tr>
+      <tr><td><span id="sub11"></span></td><td><span id="gd11"></span></td></tr>
+    </table>
+
+    <p class="grades-note">
+      <strong>Grade ::</strong> A+ → Outstanding &nbsp;&nbsp; A → Excellent &nbsp;&nbsp; B → Very Good &nbsp;&nbsp; C → Good &nbsp;&nbsp; D → Average &nbsp;&nbsp; E → Poor
+    </p>
+
+    
+    <table>
+      <h4>HEALTH STATUS</h4>
+      <tr><td><strong>Date:</strong></td><td><span id="date"></span></td></tr>
+      <tr><td><strong>Age:</strong></td><td><span id="age"></span></td></tr>
+      <tr><td><strong>Height:</strong></td><td><span id="height"></span></td></tr>
+      <tr><td><strong>Weight:</strong></td><td><span id="weight"></span></td></tr>
+      <tr><td><strong>Medical Officer’s Comment:</strong></td><td>{{medical_comment}}</td></tr>
+      <tr><td><strong>Medical Officer’s Signature:</strong></td><td></td></tr>
+      <tr><td><strong>Attendance % :</strong></td><td>{{attendance}}</td></tr>
+    </table>
+
+    <table>
+      <h4>PERSONAL QUALITIES & ATTITUDE GRADE</h4>
+      <tr><th>QUALITIES</th><th>GRADE</th></tr>
+      <tr><td>EMOTIONAL DEVELOPMENT</td><td><span id="emotional"></span></td></tr>
+      <tr><td>INTELLECTUAL DEVELOPMENT</td><td><span id="intellectual"></span></td></tr>
+      <tr><td>LANGUAGE DEVELOPMENT</td><td><span id="language"></span></td></tr>
+      <tr><td>PHYSICAL DEVELOPMENT</td><td><span id="physical"></span></td></tr>
+      <tr><td>SOCIAL DEVELOPMENT</td><td><span id="social"></span></td></tr>
+    </table>
+
+    <p><strong>CLASS TEACHER’S REMARK :</strong> {{teacher_remark}}</p>
+    <p><strong>ONLINE RESULT PUBLISHED ON :</strong> {{result_date}}</p>
+    <p><strong>DATE OF REPORT :</strong> {{report_date}}</p>
+
+    <div class="signatures">
+      <p>RECTOR</p>
+      <p>HEADMASTER</p>
+      <p>CLASS TEACHER</p>
+    </div>
+  </div>
+
+  <div class="download-btn">
+    <button onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById('report');
+      const opt = {
+        margin: 0.5,
+        filename: 'Evaluation_Report.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'table' } 
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+  <script src="index.js"/>
+</body>
+</html>

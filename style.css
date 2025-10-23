@@ -1,0 +1,21 @@
+
+div {
+  position: absolute;
+  left: 20%;
+  margin: 2%;
+  padding: 3%;
+  border: 10px inset rgb(109, 109, 230);
+  background-color: azure; 
+}
+
+    
+    
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:5px;
+
+}
